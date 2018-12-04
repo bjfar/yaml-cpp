@@ -310,11 +310,12 @@ install(
 	FILES_MATCHING PATTERN "*.h"
 )
 
-export(
-    TARGETS yaml-cpp
-    FILE "${PROJECT_BINARY_DIR}/yaml-cpp-targets.cmake")
-export(PACKAGE yaml-cpp)
-set(EXPORT_TARGETS yaml-cpp CACHE INTERNAL "export targets")
+# bjf> Don't want to install this. Just keep it internal to pyscannerbit
+#export(
+#    TARGETS yaml-cpp
+#    FILE "${PROJECT_BINARY_DIR}/yaml-cpp-targets.cmake")
+#export(PACKAGE yaml-cpp)
+#set(EXPORT_TARGETS yaml-cpp CACHE INTERNAL "export targets")
 
 set(CONFIG_INCLUDE_DIRS "${YAML_CPP_SOURCE_DIR}/include")
 configure_file(${CMAKE_CURRENT_SOURCE_DIR}/yaml-cpp-config.cmake.in
